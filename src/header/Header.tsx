@@ -3,7 +3,7 @@ import * as React from 'react';
 export default function Header(): JSX.Element {
   return (
     <div id="header">
-      Header gon be here
+      <h1>Age by Height and Weight</h1>
     </div>
   )
 }
