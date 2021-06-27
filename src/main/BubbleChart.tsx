@@ -49,11 +49,11 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ width, height, data }) => {
       .range([d3.rgb("#FFE1AA"), d3.rgb("#FFA500")])
 
     let xScale = d3.scaleLinear()
-      .domain([40, (d3.max(heightData) + 15)])
+      .domain([(d3.min(heightData) - 10), (d3.max(heightData) + 10)])
       .range([0, width - 100]);
 
     let yScale = d3.scaleLinear()
-      .domain([50, d3.max(weightData) + 50])
+      .domain([d3.min(weightData) + 20, d3.max(weightData) + 20])
       .range([height-30, 0]);
 
     let x_axis = d3.axisBottom(xScale);
@@ -85,16 +85,16 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ width, height, data }) => {
         .attr("stroke", "none")
         .attr("cx", function(d) { return xScale(d.height) })
         .attr("cy", function(d) { return yScale(d.weight) })
-        .attr("r", (d) => d.age / 2)
+        .attr("r", (d) => d.age / 1.5)
 
-    // selection
-    //   .append("text")
-    //     .attr("font-family", "sans-serif")
-    //     .attr("font-size", 10)
-    //     .attr("fill", "black")
-    //     .attr("cx", d => xScale(d.weight) + 7)
-    //     .attr("cy", d => yScale(d.height))
-    //     .text(d => d.firstName + d.lastName)
+    selection
+      .append("text")
+        .attr("font-family", "sans-serif")
+        .attr("font-size", 10)
+        .attr("fill", "black")
+        .attr("x", d => xScale(d.height) + 10)
+        .attr("y", d => yScale(d.weight))
+        .text(d => d.firstName + ' ' + d.lastName)
 
     // selection
     //   .exit()
