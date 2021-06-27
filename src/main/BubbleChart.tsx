@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as d3 from 'd3';
 
+import './BubbleChart.scss';
+
 interface IPerson {
   title: string;
   firstName: string;
@@ -59,6 +61,7 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ width, height, data }) => {
     // Take X, Y data and put into separate Arrays for easy access for D3
     let weightData: number[] = data.map((person) => person.weight);
     let heightData: number[] = data.map((person) => person.height);
+    let ageData: number[] = data.map((person) => person.age);
 
     // Create X and Y range from weightData and heightData
     let xScale = d3.scaleLinear()
@@ -129,20 +132,24 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ width, height, data }) => {
       .append("circle")
         .attr("class", "circles")
         .attr("transform", "translate(70,35)")
-        .attr("fill", "rgba(255, 165, 0)")
+        .attr("fill", (d) => `rgb(249, ${160 * (Math.min(...ageData)/d.age)}, 0)`)
         .attr("opacity", 0.5)
         .attr("stroke", "none")
-        .attr("cx", function(d) { return xScale(d.height) })
-        .attr("cy", function(d) { return yScale(d.weight) })
+        .attr("cx", (d) => xScale(d.height))
+        .attr("cy", (d) => yScale(d.weight))
         .attr("r", (d) => d.age / 1.5)
         .style("cursor", "pointer")
         .on("mouseover", (d, i) => {
           d3.select(d.target).attr("opacity", 1)
-          d3.select(d.target.nextSibling).style("fill", "black")
-        })
+          d3.select(d.target.nextSibling).style("fill", "#214395")
+        }
+        )
         .on("mouseout", (d, i) => {
           d3.select(d.target).attr("opacity", 0.5)
           d3.select(d.target.nextSibling).style("fill", "rgba(50, 170, 255)")
+        })
+        .on("click", () => {
+
         })
 
     // Create text associated with Bubble
@@ -151,7 +158,7 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ width, height, data }) => {
         .attr("class", "circle-text")
         .attr("font-family", "sans-serif")
         .attr("font-size", 12)
-        .attr("fill", "rgba(50, 170, 255)")
+        .attr("fill", "rgb(50, 170, 255)")
         .attr("x", d => xScale(d.height) + 70)
         .attr("y", d => yScale(d.weight) + 35)
         .text(d => d.firstName + ' ' + d.lastName)
@@ -167,8 +174,10 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ width, height, data }) => {
 
   }
 
-      return (
-        <svg ref={svgRef} style={{margin: "30 30 30 30"}}></svg>
+  return (
+    <div className="bubble-chart">
+      <svg ref={svgRef} style={{margin: "30 30 30 30"}}></svg>
+    </div>
   );
 }
 
