@@ -20,7 +20,7 @@ const LeftBar: React.FC<LeftBarProps> = ({ setDisplay }) => {
     <>
       <div className="navbar">
         <span className="bar-button" onClick={ toggleSideBar }>
-          <svg viewBox="0 0 100 80" width="20" height="20" fill="#fff">
+          <svg viewBox="0 0 100 80" width="20" height="20" fill="#000">
             <rect width="100" height="20"></rect>
             <rect y="30" width="100" height="20"></rect>
             <rect y="60" width="100" height="20"></rect>

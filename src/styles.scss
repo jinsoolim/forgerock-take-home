@@ -7,6 +7,11 @@ $breakpoint-desktop: 1350px;
   font-family: Arial, Helvetica, sans-serif
 }
 
+body {
+  min-width: $breakpoint-desktop;
+  max-width: $breakpoint-desktop;
+}
+
 #main {
   display: flex;
   padding-right: 90px;
@@ -15,7 +20,11 @@ $breakpoint-desktop: 1350px;
   justify-content: center;
 }
 
-body {
-  min-width: $breakpoint-desktop;
-  max-width: $breakpoint-desktop;
+#footer {
+  display: flex;
+  margin: auto;
+  padding: auto;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3em;
 }

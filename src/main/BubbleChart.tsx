@@ -31,7 +31,7 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ width, height, data, setChara
       .attr("width", width)
       .attr("height", height)
       .attr("transform", `translate(${margin.left}, ${margin.top})`)
-      .style("border", "1px solid black")
+      // .style("border", "1px solid black")
   }, []);
 
   React.useEffect(() => {
@@ -75,8 +75,7 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ width, height, data, setChara
       .attr("transform", `translate(70,35)`)
       .attr("class", "title")
       .style("text-anchor", "middle")
-      .style("font-size", "200%")
-      .style("font-weight", "800")
+      .style("font-size", "150%")
       .text("Age by Height and Weight")
 
     // Create Y Axis
@@ -133,11 +132,25 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ width, height, data, setChara
         .on("mouseover", (d, i) => {
           d3.select(d.target).attr("opacity", 1)
           d3.select(d.target.nextSibling).style("fill", "#214395")
+
+          toolTip.transition()
+            .duration(200)
+            .style("opacity", 0.9)
+
+          toolTip.html(`Age: ${d.target.__data__.age}<br/>Weight: ${d.target.__data__.weight} lbs.<br/>Height: ${d.target.__data__.height} in.`)
+            .style("left", (d.pageX) + "px")
+            .style("top", (d.pageY) + "px")
+
+            console.log(d);
         }
         )
         .on("mouseout", (d, i) => {
           d3.select(d.target).attr("opacity", 0.5)
           d3.select(d.target.nextSibling).style("fill", "rgba(50, 170, 255)")
+
+          toolTip.transition()
+            .duration(500)
+            .style("opacity", 0)
         })
         .on("click", (d) => {
           setCharacter(d.target.__data__);
@@ -155,6 +168,15 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ width, height, data, setChara
         .attr("y", d => yScale(d.weight) + 35)
         .text(d => d.firstName + ' ' + d.lastName)
 
+    //Create tooltip
+    const toolTip = d3.select("#root")
+      .append('div')
+      .attr("class", "tooltip")
+      .style("opacity", 0)
+      // .attr("x", d => xScale(d.height) + 70)
+      // .attr("y", d => yScale(d.weight) + 35)
+
+    // Create line connecting circle and text
     bubbleGroup
       .append("rect")
       .attr("class", "text-to-circle")
@@ -163,6 +185,7 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ width, height, data, setChara
       .attr("y", d => yScale(d.weight) + 35)
       .attr("width", "15px")
       .attr("height", "2px")
+
 
   }
 
