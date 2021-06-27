@@ -3,11 +3,15 @@ import * as React from 'react';
 const DisplayData = [
   {
     name: "Dashboard",
-    path: '/'
+    path: "/"
   },
   {
     name: "PeopleData",
-    path: '/peopleData'
+    path: "/peopleData"
+  },
+  {
+    name: "Coming Soon...",
+    path: "/comingSoon"
   }
 ];
 

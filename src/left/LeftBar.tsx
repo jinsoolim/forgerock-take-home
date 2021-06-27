@@ -1,12 +1,9 @@
 import * as React from 'react';
 import Displays from './Displays';
 
-import './LeftBar.scss';
+import '../Sidebars.scss';
+import { IDisplay } from '../Interfaces';
 
-interface IDisplay {
-  name: string;
-  path: string;
-}
 
 type LeftBarProps = {
   setDisplay: React.Dispatch<React.SetStateAction<string>>;

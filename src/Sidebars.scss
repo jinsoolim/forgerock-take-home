@@ -34,7 +34,7 @@ $primary-orange: #f96700;
   height: 100vh;
   display: flex;
   justify-content: center;
-  position:fixed;
+  position: fixed;
   top:0;
   left: -100%;
   transition: 850ms;
@@ -42,6 +42,23 @@ $primary-orange: #f96700;
 
 .left-bar.active {
   left: 0;
+  transition: 350ms;
+}
+
+.right-bar {
+  background-color: $primary-blue;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top:0;
+  right: -100%;
+  transition: 850ms;
+}
+
+.right-bar.active {
+  right: 0;
   transition: 350ms;
 }
 
@@ -70,6 +87,10 @@ $primary-orange: #f96700;
 }
 
 .left-bar-list {
+  width: 100%;
+}
+
+.right-bar-list {
   width: 100%;
 }
 

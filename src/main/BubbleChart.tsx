@@ -2,26 +2,17 @@ import * as React from 'react';
 import * as d3 from 'd3';
 
 import './BubbleChart.scss';
-
-interface IPerson {
-  title: string;
-  firstName: string;
-  lastName: string;
-  age: number;
-  height: number;
-  weight: number;
-  gender: string;
-  city: string;
-  country: string;
-}
+import { IPerson } from '../Interfaces';
 
 type BubbleChartProps = {
   width: number;
   height: number;
   data: IPerson[];
+  setCharacter: React.Dispatch<React.SetStateAction<IPerson>>;
+  setShowRightBar: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const BubbleChart: React.FC<BubbleChartProps> = ({ width, height, data }) => {
+const BubbleChart: React.FC<BubbleChartProps> = ({ width, height, data, setCharacter, setShowRightBar }) => {
   const svgRef = React.useRef(null);
 
   const margin = {
@@ -148,8 +139,9 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ width, height, data }) => {
           d3.select(d.target).attr("opacity", 0.5)
           d3.select(d.target.nextSibling).style("fill", "rgba(50, 170, 255)")
         })
-        .on("click", () => {
-
+        .on("click", (d) => {
+          setCharacter(d.target.__data__);
+          setShowRightBar(true);
         })
 
     // Create text associated with Bubble
