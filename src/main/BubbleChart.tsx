@@ -49,10 +49,12 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ width, height, data }) => {
     const svg = d3.select(svgRef.current)
 
     // Create a group for bubbles, bubble text, and connecting line
-    let selection = svg.selectAll("circle")
+    let bubbleGroup = svg.selectAll("g")
       .data(data)
       .enter()
-      .append("g");
+      .append("g")
+      .attr("class", "bubbles")
+
 
     // Take X, Y data and put into separate Arrays for easy access for D3
     let weightData: number[] = data.map((person) => person.weight);
@@ -123,30 +125,45 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ width, height, data }) => {
       .call(xAxisGrid)
 
     // Create Bubbles
-    selection
+    bubbleGroup
       .append("circle")
         .attr("class", "circles")
         .attr("transform", "translate(70,35)")
-        .attr("fill", "rgba(255, 165, 0, 0.5)")
+        .attr("fill", "rgba(255, 165, 0)")
+        .attr("opacity", 0.5)
         .attr("stroke", "none")
         .attr("cx", function(d) { return xScale(d.height) })
         .attr("cy", function(d) { return yScale(d.weight) })
         .attr("r", (d) => d.age / 1.5)
+        .style("cursor", "pointer")
+        .on("mouseover", (d, i) => {
+          d3.select(d.target).attr("opacity", 1)
+          d3.select(d.target.nextSibling).style("fill", "black")
+        })
+        .on("mouseout", (d, i) => {
+          d3.select(d.target).attr("opacity", 0.5)
+          d3.select(d.target.nextSibling).style("fill", "rgba(50, 170, 255)")
+        })
 
     // Create text associated with Bubble
-    selection
+    bubbleGroup
       .append("text")
         .attr("class", "circle-text")
         .attr("font-family", "sans-serif")
-        .attr("font-size", 10)
-        .attr("fill", "black")
+        .attr("font-size", 12)
+        .attr("fill", "rgba(50, 170, 255)")
         .attr("x", d => xScale(d.height) + 70)
         .attr("y", d => yScale(d.weight) + 35)
         .text(d => d.firstName + ' ' + d.lastName)
 
-    selection
+    bubbleGroup
       .append("rect")
       .attr("class", "text-to-circle")
+      .attr("fill", "black")
+      .attr("x", d => xScale(d.height) + 70)
+      .attr("y", d => yScale(d.weight) + 35)
+      .attr("width", "15px")
+      .attr("height", "2px")
 
   }
 
