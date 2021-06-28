@@ -9,7 +9,8 @@ const data = [
     gender: 'Male',
     city: 'Stanton, Pennsylvania',
     country: 'USA',
-    image: ''
+    image: '',
+    favoriteQuote: "Everything I have I owe to this job… this stupid, wonderful, boring, amazing job.",
   },
   {
     title: 'Mrs.',
@@ -21,7 +22,8 @@ const data = [
     gender: 'Female',
     city: 'Stanton, Pennsylvania',
     country: 'USA',
-    image: ''
+    image: '',
+    favoriteQuote: "How is it possible that in five years, I've had two engagements and only one chair?",
   },
   {
     title: 'Mr.',
@@ -33,7 +35,8 @@ const data = [
     gender: 'Male',
     city: 'Boulder, Colorado',
     country: 'USA',
-    image: ''
+    image: '',
+    favoriteQuote: "I'm not superstitious, but I am a little stitious.",
   },
   {
     title: 'Mr.',
@@ -45,7 +48,8 @@ const data = [
     gender: 'Male',
     city: 'Stanton, Pennsylvania',
     country: 'USA',
-    image: ''
+    image: '',
+    favoriteQuote: "Today, smoking is going to save lives.",
   },
   {
     title: 'Mr.',
@@ -57,19 +61,21 @@ const data = [
     gender: 'Male',
     city: 'Stanton, Pennsylvania',
     country: 'USA',
-    image: ''
+    image: '',
+    favoriteQuote: "Me think, why waste time say lot word, when few word do trick.",
   },
   {
-    title: 'Mrs.',
-    firstName: 'Holly',
-    lastName: 'Flax',
-    age: 48,
-    height: 63,
-    weight: 130,
+    title: 'Mr.',
+    firstName: 'Stanley',
+    lastName: 'Hudson',
+    age: 69,
+    height: 71,
+    weight: 210,
     gender: 'Female',
     city: 'Boulder, Colorado',
     country: 'USA',
-    image: ''
+    image: '',
+    favoriteQuote: "Life is short. Drive fast and leave a sexy corpse. That’s one of my mottos.",
   },
   {
     title: 'Mr.',
@@ -81,7 +87,8 @@ const data = [
     gender: 'Male',
     city: 'Ithaca, New York',
     country: 'USA',
-    image: ''
+    image: '',
+    favoriteQuote: 'Rit-dit-dit-do-doo!',
   },
   {
     title: 'Mrs.',
@@ -93,7 +100,8 @@ const data = [
     gender: 'Female',
     city: 'Stanton, Pennsylvania',
     country: 'USA',
-    image: ''
+    image: '',
+    favoriteQuote: "I normally don't enjoy making people laugh.",
   },
   {
     title: 'Mrs.',
@@ -101,11 +109,12 @@ const data = [
     lastName: 'Vance',
     age: 55,
     height: 67,
-    weight: 170,
+    weight: 200,
     gender: 'Female',
     city: 'Stanton, Pennsylvania',
     country: 'USA',
-    image: ''
+    image: '',
+    favoriteQuote: "I'm glad Michael's getting help. He has a lot of issues, and he's stupid.",
   }
 ];
 

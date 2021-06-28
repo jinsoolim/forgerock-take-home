@@ -9,6 +9,7 @@ export interface IPerson {
   city: string;
   country: string;
   image: string;
+  favoriteQuote: string;
 };
 
 export interface IDisplay {

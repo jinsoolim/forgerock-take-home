@@ -21,6 +21,12 @@ export const CharacterInformation: React.FC<ICharacterInformation> = ({ characte
         <span><strong>Weight: </strong>{character.weight} lbs.</span>
         <span><strong>Height: </strong>{character.height} in.</span>
       </li>
+      <div className="quote-holder">
+        <span style={{ fontSize: "45px", color: "darkgray", justifyContent: "center"}}>&#10077;</span><br/>
+        <p style={{ marginTop: "-35px" }}>
+          {character.favoriteQuote} - {character.firstName} {character.lastName}
+        </p>
+      </div>
     </>
   );
 };
