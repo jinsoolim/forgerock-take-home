@@ -5,6 +5,8 @@ type ICharacterInformation = {
   character: IPerson;
 };
 
+// Image used is just a placeholder, in production image would also have to be fetched or part of the character data that is fetched.
+
 export const CharacterInformation: React.FC<ICharacterInformation> = ({ character }) => {
   return (
     <>

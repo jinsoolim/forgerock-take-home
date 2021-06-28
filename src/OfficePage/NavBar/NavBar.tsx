@@ -2,7 +2,6 @@ import * as React from 'react';
 import Displays from './Displays';
 import '../../styles/Sidebars.scss';
 import { IDisplay } from '../../Interfaces';
-import hamburger from '../../styles/assets/svg/hamburger.svg';
 
 type NavBarProps = {
   setDisplay: React.Dispatch<React.SetStateAction<string>>;
@@ -29,7 +28,7 @@ const NavBar: React.FC<NavBarProps> = ({ setDisplay }) => {
             <rect y="60" width="100" height="20"></rect>
           </svg>
         </div>
-        <h1>The Office Character Chart</h1>
+        <h1 className="heading">The Office Character Chart</h1>
       </div>
       <div className={showSideBar ? "left-bar active" : "left-bar"}>
         <ul className="left-bar-list">
