@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 const data = [
   {
     title: 'Mr.',
@@ -9,8 +7,9 @@ const data = [
     height: 75,
     weight: 180,
     gender: 'Male',
-    city: 'Stanton',
+    city: 'Stanton, Pennsylvania',
     country: 'USA',
+    image: ''
   },
   {
     title: 'Mrs.',
@@ -20,8 +19,9 @@ const data = [
     height: 66,
     weight: 126,
     gender: 'Female',
-    city: 'Stanton',
+    city: 'Stanton, Pennsylvania',
     country: 'USA',
+    image: ''
   },
   {
     title: 'Mr.',
@@ -31,8 +31,9 @@ const data = [
     height: 69,
     weight: 160,
     gender: 'Male',
-    city: 'Boulder',
-    country: 'Germany',
+    city: 'Boulder, Colorado',
+    country: 'USA',
+    image: ''
   },
   {
     title: 'Mr.',
@@ -42,8 +43,9 @@ const data = [
     height: 74,
     weight: 185,
     gender: 'Male',
-    city: 'Stanton',
+    city: 'Stanton, Pennsylvania',
     country: 'USA',
+    image: ''
   },
   {
     title: 'Mr.',
@@ -53,8 +55,9 @@ const data = [
     height: 73,
     weight: 194,
     gender: 'Male',
-    city: 'Stanton',
+    city: 'Stanton, Pennsylvania',
     country: 'USA',
+    image: ''
   },
   {
     title: 'Mrs.',
@@ -64,8 +67,9 @@ const data = [
     height: 63,
     weight: 130,
     gender: 'Female',
-    city: 'Boulder',
+    city: 'Boulder, Colorado',
     country: 'USA',
+    image: ''
   },
   {
     title: 'Mr.',
@@ -75,8 +79,9 @@ const data = [
     height: 71,
     weight: 180,
     gender: 'Male',
-    city: 'Ithaca',
+    city: 'Ithaca, New York',
     country: 'USA',
+    image: ''
   },
   {
     title: 'Mrs.',
@@ -86,8 +91,9 @@ const data = [
     height: 61,
     weight: 90,
     gender: 'Female',
-    city: 'Stanton',
+    city: 'Stanton, Pennsylvania',
     country: 'USA',
+    image: ''
   },
   {
     title: 'Mrs.',
@@ -97,9 +103,10 @@ const data = [
     height: 67,
     weight: 170,
     gender: 'Female',
-    city: 'Stanton',
+    city: 'Stanton, Pennsylvania',
     country: 'USA',
+    image: ''
   }
-]
+];
 
 export default data;

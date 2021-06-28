@@ -1,8 +1,6 @@
-import * as React from 'react';
-
-import './styles.scss';
-import Main from './main/Main';
-import Footer from './footer/Footer';
+import Main from './OfficePage/Main/Main';
+import Footer from './OfficePage/Footer/Footer';
+import './styles/styles.scss';
 
 export default function App(): JSX.Element {
   return (

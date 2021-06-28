@@ -1,4 +1,13 @@
 # forgerock-take-home
 Take home challenge for ForgeRock
 
-For optimum viewing: please view in WIDTH: 1350PX
+1.
+Install modules first:
+npm install
+
+2.
+To start application:
+npm start
+
+
+View page will be on: http://localhost:3000

@@ -1,4 +1,3 @@
-$breakpoint-desktop: 1350px;
 
 * {
   box-sizing: border-box;
@@ -7,10 +6,6 @@ $breakpoint-desktop: 1350px;
   font-family: Arial, Helvetica, sans-serif
 }
 
-body {
-  min-width: $breakpoint-desktop;
-  max-width: $breakpoint-desktop;
-}
 
 #main {
   display: flex;
@@ -23,8 +18,11 @@ body {
 #footer {
   display: flex;
   margin: auto;
-  padding: auto;
+  padding: 10px;
   align-items: center;
   justify-content: center;
   margin-top: 3em;
+  height: 100%;
+  background-color: rgba(242, 244, 248, 1);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }

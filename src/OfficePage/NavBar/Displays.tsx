@@ -1,12 +1,10 @@
-import * as React from 'react';
-
 const DisplayData = [
   {
     name: "Dashboard",
     path: "/"
   },
   {
-    name: "PeopleData",
+    name: "People Data",
     path: "/peopleData"
   },
   {

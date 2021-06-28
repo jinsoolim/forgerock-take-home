@@ -7,5 +7,5 @@ export default function Footer(): JSX.Element {
         This page is for The Office fans! If you were ever curious what your favorite characters biology was just hover/click on a character bubble!
       </p>
     </div>
-  )
-}
+  );
+};

@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 export interface IPerson {
   title: string;
   firstName: string;
@@ -10,9 +8,10 @@ export interface IPerson {
   gender: string;
   city: string;
   country: string;
-}
+  image: string;
+};
 
 export interface IDisplay {
   name: string;
   path: string;
-}
+};
