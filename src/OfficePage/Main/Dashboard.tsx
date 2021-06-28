@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import BubbleChart from './BubbleChart';
 import CharacterWiki from '../../CharacterWiki/CharacterWiki';
 import Data from './Data';
@@ -7,8 +7,8 @@ import { IPerson } from '../../Interfaces';
 // Normally Data would be fetched but for challenge just imported a fake file
 
 export default function Dashboard(): JSX.Element {
-  const [showCharacterWiki, setShowCharacterWiki] = React.useState(false);
-  const [character, setCharacter] = React.useState<IPerson>({
+  const [showCharacterWiki, setShowCharacterWiki] = useState(false);
+  const [character, setCharacter] = useState<IPerson>({
     title: '',
     firstName: '',
     lastName: '',
@@ -18,6 +18,8 @@ export default function Dashboard(): JSX.Element {
     gender: '',
     city: '',
     country: '',
+    image: '',
+    favoriteQuote: ''
   });
 
   return (

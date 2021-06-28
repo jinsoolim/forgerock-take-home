@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=AmericanTypewriter');
-
 $primary-blue: #214395;
 $primary-orange: #f96700;
 
@@ -16,7 +14,7 @@ $primary-orange: #f96700;
     padding: auto;
     color: $primary-orange;
     text-shadow: #e0e0e0 1px 1px 0, 2px 2px 2px rgba(0,0,0,0);
-    font-family: "AmericanTypewriter", Arial, Helvetica, sans-serif
+    font-family: "AmericanTypewriter", Arial, Helvetica, sans-serif;
   }
 }
 
@@ -36,7 +34,6 @@ $primary-orange: #f96700;
 .quote-holder {
   width: 100%;
   text-align: center;
-  // box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   background-color: rgb(247, 245, 245);
   margin-top: 50px;
   margin-bottom: 16px;

@@ -8,7 +8,7 @@ export interface IPerson {
   gender: string;
   city: string;
   country: string;
-  image: string;
+  image?: string;
   favoriteQuote: string;
 };
 

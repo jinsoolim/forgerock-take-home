@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Displays from './Displays';
 import '../../styles/Sidebars.scss';
 import { IDisplay } from '../../Interfaces';
@@ -8,7 +8,7 @@ type NavBarProps = {
 }
 
 const NavBar: React.FC<NavBarProps> = ({ setDisplay }) => {
-  const [showSideBar, setShowSideBar] = React.useState(false);
+  const [showSideBar, setShowSideBar] = useState(false);
 
   const navBarItems = Displays.map((item: IDisplay, index: number) => {
     return (

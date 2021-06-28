@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as d3 from 'd3';
-
 import '../../styles/BubbleChart.scss';
 import { IPerson } from '../../Interfaces';
 
@@ -31,7 +30,6 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ data, setCharacter, setShowCh
       .attr("width", width)
       .attr("height", height)
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
-      // .style("border", "1px solid black")
   }, []);
 
   React.useEffect(() => {
@@ -47,7 +45,6 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ data, setCharacter, setShowCh
       .enter()
       .append("g")
       .attr("class", "bubbles");
-
 
     // Take X, Y data and put into separate Arrays for easy access for D3
     let weightData: number[] = data.map((person) => person.weight);
@@ -180,8 +177,6 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ data, setCharacter, setShowCh
       .attr("y", d => yScale(d.weight) + 35)
       .attr("width", "15px")
       .attr("height", "2px");
-
-
   }
 
   return (
