@@ -147,6 +147,10 @@ $primary-orange: #f96700;
     padding: 0 16px;
     border-radius: 4px;
   }
+
+  .sidebar-list-item:hover {
+    cursor: pointer;
+  }
 }
 
 .right-bar-list {
