@@ -57,7 +57,7 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ data, setCharacter, setShowCh
       .range([0, innerWidth]);
 
     let yScale = d3.scaleLinear()
-      .domain([d3.min(weightData) - 20, d3.max(weightData) + 20])
+      .domain([(d3.min(weightData) - 20), (d3.max(weightData) + 20)])
       .range([innerHeight, 0]);
 
     const x_axis = d3.axisBottom(xScale).ticks(10);
